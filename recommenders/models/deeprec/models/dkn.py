@@ -302,7 +302,7 @@ class DKN(BaseModel):
                 )
 
                 if hparams.enable_BN is True:
-                    curr_attention_layer = tf.keras.layers.BatchNormalization(
+                    curr_attention_layer = tf.compat.v1.layers.batch_normalization(
                         curr_attention_layer,
                         momentum=0.95,
                         epsilon=0.0001,
