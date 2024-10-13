@@ -9,13 +9,11 @@ import zipfile
 from contextlib import contextmanager
 from tempfile import TemporaryDirectory
 from tqdm import tqdm
-from retrying import retry
 
 
 log = logging.getLogger(__name__)
 
 
-@retry(wait_random_min=1000, wait_random_max=5000, stop_max_attempt_number=5)
 def maybe_download(url, filename=None, work_directory=".", expected_bytes=None):
     """Download a file if it is not already downloaded.
 
