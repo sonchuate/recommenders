@@ -190,7 +190,7 @@ class DKN(BaseModel):
                     hidden_nn_layers[layer_idx], curr_w_nn_layer, curr_b_nn_layer
                 )
                 if hparams.enable_BN is True:
-                    curr_hidden_nn_layer = tf.keras.layers.BatchNormalization(
+                    curr_hidden_nn_layer = tf.compat.v1.layers.batch_normalization(
                         curr_hidden_nn_layer,
                         momentum=0.95,
                         epsilon=0.0001,
